@@ -1,0 +1,193 @@
+<!Doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luna Nail & Brow Studio - kişiye özel nail art, kaş tasarımı, kirpik lifting ve randevu." />
+  <title>Luna Studio | Tırnaklarında ve Bakışlarında Sanat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">✨ Yaz Işıltısı: Tüm Nail Art ve Kaş/Kirpik işlemlerinde %15 indirim · <a href="#randevu">Randevunu oluştur</a></div>
+  <header class="site-header">
+    <a class="logo" href="#anasayfa">Luna<span>Nail & Brow</span></a>
+    <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav aria-label="Ana menü">
+      <a href="#anasayfa">Ana Sayfa</a><a href="#hakkimizda">Stüdyo</a><a href="#galeri">Galeri</a><a href="#fiyatlar">Fiyatlar</a><a href="#sss">SSS</a><a href="#iletisim">İletişim</a>
+      <a class="nav-cta" href="#randevu">Randevu Al</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HAVALI TATLI YENİ GİRİŞ -->
+    <section class="hero" id="anasayfa">
+      <div class="hero-copy">
+        <p class="eyebrow">İSTANBUL · BEAUTY & ART STUDIO</p>
+        <h1>Işıltını<br><em>bakışlarında</em> ve <em>tırnaklarında</em> taşı.</h1>
+        <p class="hero-text">Sana özel tasarlanan, en trend tekniklerle uygulanan ve her bakışta iyi hissettiren kusursuz dokunuşlar.</p>
+        <div class="hero-actions">
+          <a href="#randevu" class="button">Randevu Al <span>↗</span></a>
+          <a href="#kategoriSecim" class="text-link">Hizmetleri Keşfet <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="img/11.jpg" alt="Luna Studio Tasarımları" />
+        <div class="hero-sticker">made<br>for you <b>✦</b></div>
+      </div>
+      <div class="hero-flower">✿</div>
+    </section>
+
+    <section class="intro section" id="hakkimizda">
+      <div class="intro-image"><img src="img/10.jpg" alt="Pembe nail art stüdyosu" /></div>
+      <div class="intro-copy">
+        <p class="eyebrow">LUNA’YA HOŞ GELDİN</p>
+        <h2>Güzellik, detaylarda<br>başlar.</h2>
+        <p>Her tırnak ve her bakış, senin stilinin küçük bir yansıması. Luna’da favori renginden en cesur kaş ve kirpik tasarımlarına kadar, tamamen sana özel hissettiren bir görünüm yaratıyoruz.</p>
+        <div class="signature">Luna</div>
+        <small>Nail & Brow Artist · Founder</small>
+      </div>
+      <div class="stats">
+        <div><strong>100%</strong><span>Kişiye Özel Tasarım</span></div>
+        <div><strong>2+ yıl</strong><span>Profesyonel Deneyim</span></div>
+        <div><strong>♡</strong><span>Sevgiyle Hazırlanır</span></div>
+      </div>
+    </section>
+
+    <!-- AFİŞ SEÇİM ALANI (KAŞ KİRPİK & TIRNAK) -->
+    <section class="category-selection" id="kategoriSecim">
+      <div class="category-card item-left" onclick="selectCategory('lash-brow')">
+        <div class="card-bg" style="background-image: linear-gradient(rgba(37, 28, 32, 0.45), rgba(37, 28, 32, 0.45)), url('img/k_cover.jpg');"></div>
+        <div class="card-content">
+          <span class="card-tag">LASH & BROW</span>
+          <h3>Kaş & Kirpik</h3>
+          <p>Lifting, laminasyon ve profesyonel kaş tasarımı ile anlam kazanan bakışlar.</p>
+          <span class="card-btn">Tasarımları Gör ✦</span>
+        </div>
+      </div>
+      <div class="category-card item-right" onclick="selectCategory('nail-art')">
+        <div class="card-bg" style="background-image: linear-gradient(rgba(37, 28, 32, 0.45), rgba(37, 28, 32, 0.45)), url('img/0.jpg');"></div>
+        <div class="card-content">
+          <span class="card-tag">NAIL ART</span>
+          <h3>Nail Art</h3>
+          <p>Kalıcı oje, jel tırnak ve tarzını yansıtan benzersiz el yapımı çizimler.</p>
+          <span class="card-btn">Tasarımları Gör ✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERİ BÖLÜMÜ -->
+    <section class="gallery section" id="galeri">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" id="galleryEyebrow">STÜDYO GÜNLÜĞÜ</p>
+          <h2 id="galleryTitle">Nail Art Tasarımlarımız</h2>
+        </div>
+        <!-- Küçük Geçiş Butonu -->
+        <button class="switch-gallery-btn" id="gallerySwitcher" onclick="toggleGalleryType()">Kaş & Kirpiğe Geç 👁️ ↗</button>
+      </div>
+      <div class="filters" id="galleryFilters" role="tablist">
+        <!-- JS dinamik olarak butonları dolduracak -->
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- FİYATLAR -->
+    <section class="services section" id="fiyatlar">
+      <div class="services-intro">
+        <p class="eyebrow">FİYAT LİSTESİ</p>
+        <h2>Bakımın için<br>ayrılan zaman.</h2>
+        <p>Fiyatlar tasarımın yoğunluğuna ve tırnak uzunluğuna göre değişebilir. Net bilgi için WhatsApp’tan yazabilirsin.</p>
+        <a class="text-link" href="#randevu">Randevu talebi oluştur <span>↗</span></a>
+      </div>
+      <div class="price-list">
+        <div><span>Manikür & Güçlendirme</span><b>₺650’den</b></div>
+        <div><span>Kalıcı Oje</span><b>₺700’den</b></div>
+        <div><span>Jel Tırnak Uygulaması</span><b>₺1.100’den</b></div>
+        <div><span>Kaş Laminasyonu & Tasarım</span><b>₺800'den</b></div>
+        <div><span>Kirpik Lifting & Bakım</span><b>₺750'den</b></div>
+        <div><span>French / Minimalist Art</span><b>₺250’den</b></div>
+        <p>* Çıkarma işlemi ve özel taş/aksesuarlar ayrıca değerlendirilir.</p>
+      </div>
+    </section>
+
+    <!-- RANDEVU ALANI -->
+    <section class="booking" id="randevu">
+      <div class="booking-copy">
+        <p class="eyebrow">SANA BİR YER AYIRALIM</p>
+        <h2>Güzellik randevun<br>bir mesaj uzağında.</h2>
+        <p>Formu doldur; bilgilerinin hazır olduğu WhatsApp mesajını tek dokunuşla gönder.</p>
+        <div class="booking-note">✦ Randevun, uygunluk onayından sonra kesinleşir.</div>
+      </div>
+      <form id="bookingForm">
+        <label>Adın soyadın<input required name="name" placeholder="Adını yaz" /></label>
+        <div class="form-row">
+          <label>İşlem
+            <select required name="service">
+              <option value="">Seç</option>
+              <optgroup label="Tırnak İşlemleri">
+                <option>Kalıcı Oje</option>
+                <option>Jel Tırnak</option>
+                <option>Nail Art</option>
+                <option>Manikür</option>
+              </optgroup>
+              <optgroup label="Kaş & Kirpik İşlemleri">
+                <option>Kaş Laminasyonu</option>
+                <option>Kirpik Lifting</option>
+                <option>Kaş Tasarımı & Alımı</option>
+              </optgroup>
+            </select>
+          </label>
+          <label>Tercih ettiğin gün<input required name="date" type="date" /></label>
+        </div>
+        <label>İstediğin tasarım / notun<textarea name="note" placeholder="Örnek fotoğraf ya da aklındaki tasarımı yazabilirsin."></textarea></label>
+        <button class="button" type="submit">WhatsApp’tan randevu iste <span>↗</span></button>
+      </form>
+    </section>
+
+    <!-- SSS -->
+    <section class="faq section" id="sss">
+      <div>
+        <p class="eyebrow">MERAK ETTİKLERİN</p>
+        <h2>Sık sorulan<br>sorular.</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Randevu ne zaman kesinleşir?<span>+</span></summary>
+          <p>WhatsApp üzerinden uygunluk dönüşü yapıldıktan sonra randevun kesinleşir.</p>
+        </details>
+        <details>
+          <summary>Kirpik lifting ve kaş laminasyonu ne kadar kalıcı?<span>+</span></summary>
+          <p>Kullanıma ve kıl yapısına bağlı olarak ortalama 6-8 hafta boyunca formunu korur.</p>
+        </details>
+        <details>
+          <summary>İşlemler ortalama ne kadar sürüyor?<span>+</span></summary>
+          <p>Nail art işlemleri 60-150 dakika sürerken; kirpik lifting ve kaş tasarımı yaklaşık 45-60 dakika sürmektedir.</p>
+        </details>
+        <details>
+          <summary>Kendi tasarım fotoğrafımı getirebilir miyim?<span>+</span></summary>
+          <p>Tabii ki! İlham fotoğraflarını randevu formundaki not alanına ekleyebilirsin.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer id="iletisim">
+    <div class="footer-top">
+      <div><a class="logo" href="#anasayfa">Luna<span>Nail & Brow</span></a><p>Tırnakların ve bakışların için küçük, parlak bir mutluluk molası.</p></div>
+      <div><h3>İletişim</h3><a href="tel:+905555555555">+90 555 555 55 55</a><a href="mailto:hello@lunanailstudio.com">hello@lunanailstudio.com</a></div>
+      <div><h3>Bizi takip et</h3><a href="https://instagram.com" target="_blank" rel="noreferrer">@lunanailstudio ↗</a><span>Ankara, Türkiye</span></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Luna Nail & Brow Studio. Tüm hakları saklıdır.</span>
+      <span>Web tasarım: <a href="#anasayfa">Merve ✦</a></span>
+    </div>
+  </footer>
+  
+  <a class="whatsapp" href="https://wa.me/905555555555" target="_blank" rel="noreferrer" aria-label="WhatsApp ile mesaj at"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.2 4.8A15.5 15.5 0 0 0 2.9 23.5L1 31l7.7-2A15.5 15.5 0 1 0 27.2 4.8Zm-11.1 24a12.5 12.5 0 0 1-6.4-1.8l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.6 12.6 0 1 1 16.1 28.8Zm6.9-9.4c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2s-1.1 1.3-1.4 1.6c-.3.3-.5.3-1 .1-2.7-1.3-4.5-2.4-6.2-5.4-.4-.6.4-.5 1.1-1.8.2-.3.1-.6 0-.8L10.5 9c-.3-.8-.7-.7-1-.7h-.9c-.3 0-.8.1-1.2.6-.4.4-1.6 1.6-1.6 3.9s1.7 4.5 1.9 4.8c.2.3 3.3 5.1 8 7.1 3 1.3 4.1 1.4 5.6 1.2.9-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2-.1-.2-.4-.3-.8-.5Z"/></svg></a>
+  <dialog class="lightbox" id="lightbox"><button class="close" aria-label="Kapat">×</button><button class="prev" aria-label="Önceki görsel">‹</button><figure><img src="" alt="" /><figcaption></figcaption></figure><button class="next" aria-label="Sonraki görsel">›</button></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
