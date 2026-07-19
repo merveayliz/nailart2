@@ -1,4 +1,3 @@
-// Tırnak Tasarımları Veritabanı
 const nailDesigns = [
   ['img/1.jpg','Lavender Outline','art'],
   ['img/2.jpg','Violet Waves','dark'],
@@ -18,7 +17,6 @@ const nailDesigns = [
   ['img/88.jpg','Wildflower Day','art']
 ];
 
-// Kaş & Kirpik Tasarımları Veritabanı (Senin istediğin gibi k dosyalarıyla hazırlandı)
 const browDesigns = [
   ['img/k1.jpg', 'Lash Lifting Classic', 'lash'],
   ['img/k2.jpg', 'Brow Laminations', 'brow'],
@@ -28,7 +26,6 @@ const browDesigns = [
   ['img/k6.jpg', 'Lash & Brow Combo', 'combo']
 ];
 
-// Aktif Galeri Tipi: 'nail-art' veya 'lash-brow'
 let currentGalleryType = 'nail-art';
 
 const gallery = document.querySelector('#galleryGrid');
@@ -37,7 +34,6 @@ const lightboxImg = dialog.querySelector('img');
 const caption = dialog.querySelector('figcaption');
 let shown = [], current = 0;
 
-// Dinamik Filtre Butonları Oluşturma
 function updateFilters() {
   const filterContainer = document.querySelector('#galleryFilters');
   if (currentGalleryType === 'nail-art') {
@@ -57,7 +53,6 @@ function updateFilters() {
     `;
   }
 
-  // Filtre butonlarına tıklama olaylarını yeniden ata
   filterContainer.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
     filterContainer.querySelector('.active').classList.remove('active');
     btn.classList.add('active');
@@ -65,7 +60,6 @@ function updateFilters() {
   }));
 }
 
-// Galeri Listeleme Fonksiyonu
 function render(filter='all') {
   const activeData = currentGalleryType === 'nail-art' ? nailDesigns : browDesigns;
   shown = filter === 'all' ? activeData : activeData.filter(x => x[2] === filter);
@@ -77,7 +71,6 @@ function render(filter='all') {
   `).join('');
 }
 
-// Kategori Seçim Afişlerine Tıklandığında Tetiklenen Fonksiyon
 function selectCategory(type) {
   currentGalleryType = type;
   updateFilters();
@@ -97,17 +90,14 @@ function selectCategory(type) {
     switcher.textContent = 'Nail Art Galerisine Geç 💅 ↗';
   }
 
-  // Galeri alanına pürüzsüz kaydırma yap
   document.querySelector('#galeri').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Küçük Butona Tıklandığında Hızlı Galeri Değişimi
 function toggleGalleryType() {
   const nextType = currentGalleryType === 'nail-art' ? 'lash-brow' : 'nail-art';
   selectCategory(nextType);
 }
 
-// Lightbox Açma Kodu
 function openLightbox(index){
   current = index; 
   const d = shown[current];
@@ -140,7 +130,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') step(1);
 });
 
-// Mobil Menü
 document.querySelector('.menu-toggle').addEventListener('click', function(){
   const nav = document.querySelector('.site-header nav');
   nav.classList.toggle('open');
@@ -148,7 +137,6 @@ document.querySelector('.menu-toggle').addEventListener('click', function(){
 });
 document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.querySelector('nav').classList.remove('open')));
 
-// WhatsApp Randevu Formu
 document.querySelector('#bookingForm').addEventListener('submit', e => {
   e.preventDefault();
   const data = new FormData(e.currentTarget);
@@ -156,6 +144,5 @@ document.querySelector('#bookingForm').addEventListener('submit', e => {
   window.open(`https://wa.me/905555555555?text=${message}`, '_blank', 'noopener');
 });
 
-// İlk Başlangıç Değerlerini Yükle
 updateFilters();
 render();
